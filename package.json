@@ -14,7 +14,12 @@
     "rsa"
   ],
   "author": "roblabla",
-  "license": "ISC",
+  "licenses": [
+    {
+      "type": "Apache 2.0",
+      "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+    }
+  ],
   "bugs": {
     "url": "https://github.com/roblabla/ursa-purejs/issues"
   },
