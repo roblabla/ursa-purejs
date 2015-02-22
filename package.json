@@ -1,0 +1,25 @@
+{
+  "name": "ursa-purejs",
+  "version": "1.0.0",
+  "description": "A pure-js drop-in replacement for URSA, using node-rsa",
+  "main": "lib/ursa.js",
+  "scripts": {
+    "test": "node test/test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/roblabla/ursa-purejs"
+  },
+  "keywords": [
+    "rsa"
+  ],
+  "author": "roblabla",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/roblabla/ursa-purejs/issues"
+  },
+  "homepage": "https://github.com/roblabla/ursa-purejs",
+  "dependencies": {
+    "node-rsa": "^0.2.13"
+  }
+}
