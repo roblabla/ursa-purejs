@@ -39,8 +39,8 @@ var PRIVATE_KEY_2 = fs.readFileSync(__dirname + "/zorch.pem");
 var PRIVATE_KEY_3 = fs.readFileSync(__dirname + "/another_zorch.pem");
 
 var PASSWORD = new Buffer("biscuits", UTF8);
-// TODO : Make this 8-bit to match node-rsa
-var EXPONENT_HEX = "00010001";
+
+var EXPONENT_HEX = "010001";
 var MODULUS_HEX =
     "ae0a2fd0a1d56253ad4b5e7f5883b41e9cfd348b964221fff55b82aa3127b0c2" +
     "5d651db436cc623428cc4e3397b65f23086140a7c7f26f9a5e4fb425a78c5993" +

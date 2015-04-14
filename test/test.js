@@ -44,8 +44,7 @@ function test_getExponent(key) {
 }
 
 function test_getModulus(key) {
-  // TODO : get modulus
-    /*var buf = key.getModulus();
+    var buf = key.getModulus();
     assert.equal(buf.toString(fixture.HEX), fixture.MODULUS_HEX);
 
     var result = key.getModulus(fixture.HEX);
@@ -58,7 +57,7 @@ function test_getModulus(key) {
     assert.equal(result, buf.toString(fixture.BINARY));
 
     result = key.getModulus(fixture.UTF8);
-    assert.equal(result, buf.toString(fixture.UTF8));*/
+    assert.equal(result, buf.toString(fixture.UTF8));
 }
 
 function test_toPublicPem(key) {
@@ -71,22 +70,20 @@ function test_toPublicPem(key) {
 }
 
 function test_toPublicSsh(key) {
-  // TODO : Depends on modulus fix
-    /*var keyString = fixture.SSH_PUBLIC_KEY.toString(fixture.BASE64);
+    var keyString = fixture.SSH_PUBLIC_KEY.toString(fixture.BASE64);
     var result = key.toPublicSsh().toString(fixture.BASE64);
     assert.equal(result, keyString);
 
     result = key.toPublicSsh(fixture.BASE64);
-    assert.equal(result, keyString);*/
+    assert.equal(result, keyString);
 }
 
 function test_toPublicSshFingerprint(key) {
-    // TODO : See above
-    /*var result = key.toPublicSshFingerprint().toString(fixture.HEX);
+    var result = key.toPublicSshFingerprint().toString(fixture.HEX);
     assert.equal(result, fixture.SSH_PUBLIC_KEY_FINGERPRINT_HEX);
 
     result = key.toPublicSshFingerprint(fixture.HEX);
-    assert.equal(result, fixture.SSH_PUBLIC_KEY_FINGERPRINT_HEX);*/
+    assert.equal(result, fixture.SSH_PUBLIC_KEY_FINGERPRINT_HEX);
 }
 
 function test_encrypt(key) {
@@ -127,11 +124,11 @@ function test_verify(key) {
 }
 
 function test_hashAndVerify(key) {
-    /*assert.equal(key.hashAndVerify(fixture.SHA256,
+    assert.equal(key.hashAndVerify(fixture.SHA256,
                                    new Buffer(fixture.PLAINTEXT, fixture.UTF8),
                                    fixture.PLAINTEXT_SHA256_SIGNATURE,
                                    fixture.HEX),
-                 true);*/
+                 true);
 }
 
 function testPublicKeyMethods(key) {
@@ -147,12 +144,12 @@ function testPublicKeyMethods(key) {
 }
 
 function test_toPrivatePem(key) {
-    /*var keyString = fixture.PRIVATE_KEY.toString(fixture.UTF8);
+    var keyString = fixture.PRIVATE_KEY.toString(fixture.UTF8);
     var result = key.toPrivatePem().toString(fixture.UTF8);
     assertStringEqual(result, keyString);
 
     result = key.toPrivatePem(fixture.UTF8);
-    assertStringEqual(result, keyString);*/
+    assertStringEqual(result, keyString);
 }
 
 function test_toEncryptedPrivatePem(key) {
@@ -311,22 +308,19 @@ function test_createPrivateKeyFromComponents() {
 function test_fail_createPublicKey() {
     // This is mostly tested at the native level. This just tests the
     // extra failures added at the high level.
-    // TODO : fix this, breaks for some reason
-    /*function f1() {
+    function f1() {
         console.log(ursa.createPublicKey(fixture.PRIVATE_KEY));
     }
-    assert.throws(f1, /Not a public key\./);*/
+    assert.throws(f1, /Not a public key\./);
 }
 
 function test_fail_createPrivateKey() {
     // This is mostly tested at the native level. This just tests the
     // extra failures added at the high level.
-    // TODO : fix this, breaks for some reason
-    /*
     function f1() {
         ursa.createPrivateKey(fixture.PUBLIC_KEY);
     }
-    assert.throws(f1, /Not a private key\./);*/
+    assert.throws(f1, /Not a private key\./);
 }
 
 function test_coerceKey() {
@@ -399,16 +393,15 @@ function test_fail_coercePrivateKey() {
     }
     assert.throws(f3, /Not a private key/);
 
-    // TODO : breaks
-    /*function f4() {
+    function f4() {
         ursa.coercePrivateKey(fixture.PUBLIC_KEY);
     }
-    assert.throws(f4, /Not a private key/);*/
+    assert.throws(f4, /Not a private key/);
 
-    /*function f5() {
+    function f5() {
         ursa.coercePrivateKey(fixture.PUBLIC_KEY.toString());
     }
-    assert.throws(f5, /Not a private key/);*/
+    assert.throws(f5, /Not a private key/);
 }
 
 function test_fail_coercePublicKey() {
@@ -427,8 +420,7 @@ function test_fail_coercePublicKey() {
     }
     assert.throws(f3, /Not a public key/);
 
-    // TODO : breaks
-    /*function f4() {
+    function f4() {
         ursa.coercePublicKey(fixture.PRIVATE_KEY);
     }
     assert.throws(f4, /Not a public key/);
@@ -436,7 +428,7 @@ function test_fail_coercePublicKey() {
     function f5() {
         ursa.coercePublicKey(fixture.PRIVATE_KEY.toString());
     }
-    assert.throws(f5, /Not a public key/);*/
+    assert.throws(f5, /Not a public key/);
 }
 
 function testPublicKey() {
@@ -488,7 +480,7 @@ function test_equalKeys() {
     assert.equal(ursa.equalKeys(pub, null), false);
     assert.equal(ursa.equalKeys(true, pub), false);
 
-    /*assert.equal(ursa.equalKeys(pub, pub), true);
+    assert.equal(ursa.equalKeys(pub, pub), true);
     assert.equal(ursa.equalKeys(priv, priv), true);
     assert.equal(ursa.equalKeys(pub, priv), false);
     assert.equal(ursa.equalKeys(priv, pub), false);
@@ -497,7 +489,7 @@ function test_equalKeys() {
     assert.equal(ursa.equalKeys(priv, samePriv), true);
 
     assert.equal(ursa.equalKeys(pub, diffPub), false);
-    assert.equal(ursa.equalKeys(priv, diffPriv), false);*/
+    assert.equal(ursa.equalKeys(priv, diffPriv), false);
 }
 
 function test_matchingPublicKeys() {
@@ -513,7 +505,7 @@ function test_matchingPublicKeys() {
     assert.equal(ursa.matchingPublicKeys(pub, null), false);
     assert.equal(ursa.matchingPublicKeys(true, pub), false);
 
-    /*assert.equal(ursa.matchingPublicKeys(pub, pub), true);
+    assert.equal(ursa.matchingPublicKeys(pub, pub), true);
     assert.equal(ursa.matchingPublicKeys(priv, priv), true);
     assert.equal(ursa.matchingPublicKeys(pub, priv), true);
     assert.equal(ursa.matchingPublicKeys(priv, pub), true);
@@ -526,7 +518,7 @@ function test_matchingPublicKeys() {
     assert.equal(ursa.matchingPublicKeys(pub, diffPub), false);
     assert.equal(ursa.matchingPublicKeys(pub, diffPriv), false);
     assert.equal(ursa.matchingPublicKeys(priv, diffPriv), false);
-    assert.equal(ursa.matchingPublicKeys(priv, diffPub), false);*/
+    assert.equal(ursa.matchingPublicKeys(priv, diffPub), false);
 }
 
 function testSigner() {
@@ -555,7 +547,8 @@ function testVerifier() {
 }
 
 function test_openSshPublicKey() {
-    /*var sshKey = ursa.openSshPublicKey(fixture.SSH_PUBLIC_KEY),
+  // TODO : Implement this ?
+/*    var sshKey = ursa.openSshPublicKey(fixture.SSH_PUBLIC_KEY),
         pubKey = ursa.createPublicKey(fixture.PUBLIC_KEY);
 
     assert.equal(ursa.equalKeys(sshKey, pubKey), true);*/
