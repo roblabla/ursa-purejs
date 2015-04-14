@@ -25,6 +25,6 @@
   },
   "homepage": "https://github.com/roblabla/ursa-purejs",
   "dependencies": {
-    "node-rsa": "^0.2.13"
+    "node-rsa": "^0.2.23"
   }
 }
