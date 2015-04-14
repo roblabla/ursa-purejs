@@ -294,12 +294,10 @@ Get the public exponent as an unsigned big-endian byte sequence.
 
 ### getModulus(encoding)
 
-NOT YET IMPLEMENTED
 Get the public modulus as an unsigned big-endian byte sequence.
 
 ### hashAndVerify(algorithm, buf, sig, encoding)
 
-NOT YET IMPLEMENTED
 This is a friendly wrapper for verifying signatures. The given buffer
 is hashed using the named algorithm, and the result is verified
 against the given signature. This returns `true` if the hash and
@@ -329,7 +327,6 @@ This converts the public key data into a PEM-format file.
 
 ### toPublicSsh(encoding)
 
-NOT YET IMPLEMENTED
 This converts the public key data into an SSH-format file. This is the
 file format one finds in SSH's `authorized_keys` and `known_hosts` files.
 When used in such files, the contents are base64-encoded and prefixed with
@@ -345,7 +342,6 @@ ssh-keygen -y -f key-name.pem > key-name.sshpub
 
 ### toPublicSshFingerprint(encoding)
 
-NOT YET IMPLEMENTED
 Return the SSH-style public key fingerprint of this key. See
 `ursa.sshFingerprint()`, above, for more details.
 
@@ -401,7 +397,6 @@ exponent is not encrypted in any way, so this method should be used with caution
 
 ### hashAndSign(algorithm, buf, bufEncoding, outEncoding)
 
-NOT YET IMPLEMENTED
 This is a friendly wrapper for producing signatures. The given buffer
 is hashed using the named algorithm, and the result is signed using
 the private key held by this instance. The return value of this method

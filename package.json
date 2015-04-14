@@ -1,6 +1,6 @@
 {
   "name": "ursa-purejs",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A pure-js drop-in replacement for URSA, using node-rsa",
   "main": "lib/ursa.js",
   "scripts": {
